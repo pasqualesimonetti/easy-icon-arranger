@@ -1,0 +1,4 @@
+module CEIA [system] {
+    header "libeia.h"
+    export *
+}

@@ -1,0 +1,9 @@
+build/
+dist/
+macos/.build/
+macos/.swiftpm/
+macos/Vendor/
+macos/Sources/CEIA/libeia.h
+data/
+*.plist.bak
+.DS_Store
