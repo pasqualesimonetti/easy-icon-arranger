@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <a href="https://www.producthunt.com/products/easy-icon-arranger?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-easy-icon-arranger" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1327985&theme=light" alt="Easy Icon Arranger on Product Hunt" width="250" height="54"></a>
+</p>
+
+<p align="center">
   <img src="docs/screenshot-home.png" width="860" alt="Easy Icon Arranger main window">
 </p>
 
