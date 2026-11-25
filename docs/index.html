@@ -112,9 +112,10 @@
 
   .support { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .btn.kofi { background: #d63a3a; color: #fff; }
+  .btn.paypal { background: #003087; color: #fff; }
   .btn.sponsor { background: var(--surface); color: var(--text); border-color: var(--line); }
   .btn.sponsor svg { color: #db2777; }
-  .btn.kofi:hover, .btn.sponsor:hover { filter: brightness(1.05); }
+  .btn.kofi:hover, .btn.paypal:hover, .btn.sponsor:hover { filter: brightness(1.05); }
 
   footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
@@ -231,11 +232,15 @@
   <section id="support">
     <div class="wrap">
       <h2>Support the project</h2>
-      <p class="sub">Easy Icon Arranger is free and has no ads or tracking. If it saved you time, a coffee or a sponsorship keeps it going. A star or a fixed translation helps too.</p>
+      <p class="sub">Easy Icon Arranger is free and has no ads or tracking. If it saved you time, a coffee, a PayPal donation or a sponsorship keeps it going. A star or a fixed translation helps too.</p>
       <div class="support">
         <a class="btn kofi" href="https://ko-fi.com/pasqualesimonetti">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h13v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2"/><path d="M7 3v2M11 3v2"/></svg>
           Buy me a coffee on Ko-fi
+        </a>
+        <a class="btn paypal" href="https://www.paypal.com/paypalme/PasqualeSimonetti">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+          Donate with PayPal
         </a>
         <a class="btn sponsor" href="https://github.com/sponsors/pasqualesimonetti">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.1C.9 8.6 2.9 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5c3.5 0 5.5 3.6 4 6.9C19.5 16.4 12 21 12 21Z"/></svg>

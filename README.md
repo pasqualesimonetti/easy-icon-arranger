@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://www.producthunt.com/products/easy-icon-arranger?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-easy-icon-arranger" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1327985&theme=light" alt="Easy Icon Arranger on Product Hunt" width="250" height="54"></a><br>
-  <a href="https://pasqualesimonetti.github.io/easy-icon-arranger/">Website</a> | <a href="https://ko-fi.com/pasqualesimonetti">Support on Ko-fi</a> | <a href="https://github.com/sponsors/pasqualesimonetti">GitHub Sponsors</a>
+  <a href="https://pasqualesimonetti.github.io/easy-icon-arranger/">Website</a> | <a href="https://ko-fi.com/pasqualesimonetti">Support on Ko-fi</a> | <a href="https://www.paypal.com/paypalme/PasqualeSimonetti">Donate with PayPal</a> | <a href="https://github.com/sponsors/pasqualesimonetti">GitHub Sponsors</a>
 </p>
 
 <p align="center">
@@ -130,6 +130,7 @@ no network requests and collects no data.
 Easy Icon Arranger is free. If it saved you time, you can support its development:
 
 <a href="https://ko-fi.com/pasqualesimonetti"><img src="https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-FF5E5B?logo=kofi&logoColor=white" alt="Support on Ko-fi"></a>
+<a href="https://www.paypal.com/paypalme/PasqualeSimonetti"><img src="https://img.shields.io/badge/PayPal-Donate-003087?logo=paypal&logoColor=white" alt="Donate with PayPal"></a>
 <a href="https://github.com/sponsors/pasqualesimonetti"><img src="https://img.shields.io/badge/GitHub%20Sponsors-Sponsor-EA4AAA?logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub"></a>
 
 ## Contributing
