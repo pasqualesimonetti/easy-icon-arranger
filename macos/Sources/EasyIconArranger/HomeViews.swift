@@ -128,6 +128,6 @@ struct SelectionBar: View {
         .controlSize(.regular)
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
-        .glassEffect(.regular.tint(.accentColor.opacity(0.15)), in: .capsule)
+        .glassEffect(.regular.tint(Brand.blue.opacity(0.15)), in: .capsule)
     }
 }

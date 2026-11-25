@@ -14,6 +14,8 @@ struct HomeManagerApp: App {
         Window(L("app.title"), id: "main") {
             ContentView()
                 .environment(store)
+                .tint(Brand.blue)
+                .preferredColorScheme(Brand.forcedScheme)
                 .frame(minWidth: 980, minHeight: 640)
                 .onAppear { delegate.store = store }
         }

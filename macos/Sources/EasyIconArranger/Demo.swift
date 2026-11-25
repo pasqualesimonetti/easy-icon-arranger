@@ -108,3 +108,19 @@ struct DemoIcon: View {
         }
     }
 }
+
+/// Brand colours (same as the app icon and the website).
+enum Brand {
+    static let blue = Color(red: 37 / 255, green: 99 / 255, blue: 235 / 255)   // #2563EB
+    static let teal = Color(red: 20 / 255, green: 184 / 255, blue: 166 / 255)  // #14B8A6
+    static let amber = Color(red: 1, green: 176 / 255, blue: 32 / 255)         // #FFB020
+
+    /// `-appearance light|dark` at launch forces the appearance (for screenshots).
+    static var forcedScheme: ColorScheme? {
+        switch UserDefaults.standard.string(forKey: "appearance") {
+        case "light": .light
+        case "dark": .dark
+        default: nil
+        }
+    }
+}

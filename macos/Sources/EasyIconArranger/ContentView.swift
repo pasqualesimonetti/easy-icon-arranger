@@ -106,7 +106,7 @@ struct ContentView: View {
         ToolbarItem(placement: .status) {
             Text(statusText)
                 .font(.callout)
-                .foregroundStyle(store.problems.isEmpty ? (store.dirty ? Color.accentColor : .secondary) : .red)
+                .foregroundStyle(store.problems.isEmpty ? (store.dirty ? Brand.blue : .secondary) : .red)
                 .help(store.problems.joined(separator: "\n"))
                 .lineLimit(1)
                 .fixedSize()

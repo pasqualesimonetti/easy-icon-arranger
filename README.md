@@ -10,7 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://www.producthunt.com/products/easy-icon-arranger?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-easy-icon-arranger" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1327985&theme=light" alt="Easy Icon Arranger on Product Hunt" width="250" height="54"></a>
+  <a href="https://www.producthunt.com/products/easy-icon-arranger?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-easy-icon-arranger" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1327985&theme=light" alt="Easy Icon Arranger on Product Hunt" width="250" height="54"></a><br>
+  <a href="https://pasqualesimonetti.github.io/easy-icon-arranger/">Website</a> | <a href="https://ko-fi.com/pasqualesimonetti">Support on Ko-fi</a> | <a href="https://github.com/sponsors/pasqualesimonetti">GitHub Sponsors</a>
 </p>
 
 <p align="center">
@@ -62,8 +63,8 @@ Home Screen layout.
 
 ## Install
 
-1. Download `Easy-Icon-Arranger.zip` from the [latest release](../../releases/latest)
-2. Unzip it and move `Easy Icon Arranger.app` to Applications
+1. Download [`Easy-Icon-Arranger.dmg`](https://github.com/pasqualesimonetti/easy-icon-arranger/releases/latest/download/Easy-Icon-Arranger.dmg) from the [latest release](../../releases/latest)
+2. Open it and drag Easy Icon Arranger onto the Applications folder
 3. The app is not signed with an Apple Developer ID yet, so macOS blocks the first launch.
    Open it once, then go to System Settings, Privacy and Security, and click "Open Anyway".
    Alternatively, in Terminal:
@@ -97,6 +98,7 @@ git clone https://github.com/pasqualesimonetti/easy-icon-arranger.git
 cd easy-icon-arranger
 ./scripts/build.sh            # builds build/Easy Icon Arranger.app
 ./scripts/build.sh --install  # also copies it to ~/Applications
+./scripts/dmg.sh              # packages dist/Easy-Icon-Arranger.dmg
 ```
 
 With only the Command Line Tools installed, the script builds against the
@@ -122,6 +124,13 @@ prints a summary without changing anything.
 
 Everything happens locally between your Mac and your iPhone. The app makes
 no network requests and collects no data.
+
+## Support
+
+Easy Icon Arranger is free. If it saved you time, you can support its development:
+
+<a href="https://ko-fi.com/pasqualesimonetti"><img src="https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-FF5E5B?logo=kofi&logoColor=white" alt="Support on Ko-fi"></a>
+<a href="https://github.com/sponsors/pasqualesimonetti"><img src="https://img.shields.io/badge/GitHub%20Sponsors-Sponsor-EA4AAA?logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub"></a>
 
 ## Contributing
 

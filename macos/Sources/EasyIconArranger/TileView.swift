@@ -59,7 +59,7 @@ struct TileView: View {
         .frame(width: size.width, height: size.height, alignment: .top)
         .overlay(alignment: hint?.after == true ? .trailing : .leading) {
             if hint != nil {
-                Capsule().fill(Color.accentColor).frame(width: 3, height: UI.icon).padding(.top, 6)
+                Capsule().fill(Brand.blue).frame(width: 3, height: UI.icon).padding(.top, 6)
                     .frame(maxHeight: .infinity, alignment: .top)
             }
         }
@@ -79,9 +79,9 @@ struct TileView: View {
     }
 
     private func ringColor(selected: Bool) -> Color {
-        if selected || store.hoverFolder == id { return .accentColor }
-        if store.openFolder == id { return .yellow }
-        return .yellow.opacity(0.9) // search hit
+        if selected || store.hoverFolder == id { return Brand.blue }
+        if store.openFolder == id { return Brand.amber }
+        return Brand.amber.opacity(0.9) // search hit
     }
 
     @ViewBuilder private func widget(_ item: Item?, size: CGSize) -> some View {
