@@ -109,10 +109,10 @@ struct DemoIcon: View {
     }
 }
 
-/// Brand colours (same as the app icon and the website).
+/// Brand colours (from the app icon, also used by the website).
 enum Brand {
     static let blue = Color(red: 37 / 255, green: 99 / 255, blue: 235 / 255)   // #2563EB
-    static let teal = Color(red: 20 / 255, green: 184 / 255, blue: 166 / 255)  // #14B8A6
+    static let violet = Color(red: 94 / 255, green: 64 / 255, blue: 214 / 255) // #5E40D6
     static let amber = Color(red: 1, green: 176 / 255, blue: 32 / 255)         // #FFB020
 
     /// `-appearance light|dark` at launch forces the appearance (for screenshots).

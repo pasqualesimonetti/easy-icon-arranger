@@ -15,36 +15,36 @@
 <meta property="og:url" content="https://pasqualesimonetti.github.io/easy-icon-arranger/">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  /* Brand: teal #14B8A6 to blue #2563EB, amber #FFB020 accent (same as the app icon) */
+  /* Brand: blue #3884FF to violet #5E40D6, as in the app icon */
   :root {
     --bg: #f8fafc;
-    --hero: linear-gradient(135deg, #ecfdf9 0%, #eff6ff 60%, #f8fafc 100%);
+    --hero: linear-gradient(135deg, #eef4ff 0%, #f3efff 60%, #f8fafc 100%);
     --surface: #ffffff;
     --text: #0f172a;
     --muted: #475569;
     --line: #e2e8f0;
-    --brand: #2563eb;
-    --brand-2: #14b8a6;
+    --brand: #5e40d6;
+    --brand-2: #3884ff;
     --brand-text: #ffffff;
-    --link: #1d4ed8;
+    --link: #3b4fd8;
     --amber: #ffb020;
-    --accent-soft: #e0f2fe;
+    --accent-soft: #ecebff;
     --radius: 14px;
     --maxw: 1120px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0b1220;
-      --hero: linear-gradient(135deg, #062a2a 0%, #0b1a3a 60%, #0b1220 100%);
+      --hero: linear-gradient(135deg, #0d1a3d 0%, #1a1240 60%, #0b1220 100%);
       --surface: #111a2e;
       --text: #e8eefc;
       --muted: #9fb0cf;
       --line: #1f2b45;
-      --brand: #3b82f6;
-      --brand-2: #14b8a6;
+      --brand: #7b61ff;
+      --brand-2: #4c8dff;
       --brand-text: #ffffff;
       --link: #7cb2ff;
-      --accent-soft: #10284a;
+      --accent-soft: #1e1f4a;
     }
   }
   * { box-sizing: border-box; }
@@ -70,12 +70,12 @@
   nav.top a:hover { color: var(--text); }
 
   .hero { padding: 72px 0 56px; text-align: center; background: var(--hero); border-bottom: 1px solid var(--line); }
-  .hero .icon { width: 120px; height: 120px; margin: 0 auto 20px; filter: drop-shadow(0 12px 22px rgba(37, 99, 235, .28)); }
+  .hero .icon { width: 120px; height: 120px; margin: 0 auto 20px; filter: drop-shadow(0 12px 22px rgba(79, 70, 229, .3)); }
   h1 { font-size: clamp(34px, 5.2vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 auto 18px; max-width: 16ch; }
   .lead { font-size: clamp(18px, 2.2vw, 21px); color: var(--muted); max-width: 40ch; margin: 0 auto 32px; }
   .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid transparent; }
-  .btn.primary { background: linear-gradient(120deg, var(--brand-2), var(--brand) 55%); color: var(--brand-text); box-shadow: 0 8px 20px rgba(37, 99, 235, .25); }
+  .btn.primary { background: linear-gradient(120deg, var(--brand-2), var(--brand) 55%); color: var(--brand-text); box-shadow: 0 8px 20px rgba(79, 70, 229, .25); }
   .btn.primary:hover { filter: brightness(1.06); }
   .btn.ghost { border-color: var(--line); color: var(--text); background: var(--surface); }
   .btn.ghost:hover { border-color: var(--muted); }
