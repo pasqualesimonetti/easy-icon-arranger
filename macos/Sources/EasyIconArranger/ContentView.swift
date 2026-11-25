@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(AppStore.self) private var store
     @AppStorage(L10n.languageKey) private var language = L10n.system
+    @AppStorage(Brand.appearanceKey) private var appearance = "system"
     @State private var showBackups = false
     @State private var askSave = false
     @State private var askReload = false
@@ -111,6 +112,22 @@ struct ContentView: View {
                 .lineLimit(1)
                 .fixedSize()
                 .padding(.horizontal, 12)
+        }
+        ToolbarItem(placement: .primaryAction) {
+            Menu {
+                Picker(L("tb.appearance"), selection: $appearance) {
+                    ForEach(["system", "light", "dark"], id: \.self) { v in
+                        Label(L("appearance." + v), systemImage: Brand.appearanceSymbol(v)).tag(v)
+                    }
+                }
+                .pickerStyle(.inline)
+            } label: {
+                Label(L("tb.appearance"), systemImage: Brand.appearanceSymbol(appearance))
+                    .labelStyle(.iconOnly)
+            }
+            .accessibilityLabel(L("tb.appearance"))
+            .help(L("tb.appearance"))
+            .onChange(of: appearance) { _, v in Brand.applyAppearance(v) }
         }
         ToolbarItem(placement: .primaryAction) {
             Menu {

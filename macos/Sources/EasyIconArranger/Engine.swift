@@ -141,6 +141,15 @@ enum Engine {
         }
     }
 
+    /// Moves one backup to the Trash (so it can still be recovered from there).
+    static func deleteBackup(_ name: String) async throws {
+        struct PathReply: Decodable, Sendable { let path: String }
+        let reply = try await run {
+            try name.withCString { try required(EIABackupFile(UnsafeMutablePointer(mutating: $0)), as: PathReply.self) }
+        }
+        try FileManager.default.trashItem(at: URL(fileURLWithPath: reply.path), resultingItemURL: nil)
+    }
+
     static func revealBackups() {
         Task.detached { _ = try? decode(EIARevealBackups(), as: Empty.self) }
     }

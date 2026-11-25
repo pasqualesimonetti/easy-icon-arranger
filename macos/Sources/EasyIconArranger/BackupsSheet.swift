@@ -5,6 +5,8 @@ struct BackupsSheet: View {
     @Environment(\.dismiss) private var dismiss
     @State private var list: [Backup] = []
     @State private var confirm: Backup?
+    @State private var deleting: Backup?
+    @State private var failure: String?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -24,6 +26,13 @@ struct BackupsSheet: View {
                         Text(L("bk.meta", b.pages, b.items)).font(.caption).foregroundStyle(.secondary)
                         Button(L("bk.restore")) { confirm = b }
                             .disabled(store.busy || store.phase != .ready)
+                        Button(role: .destructive) { deleting = b } label: {
+                            Image(systemName: "trash")
+                        }
+                        .buttonStyle(.borderless)
+                        .help(L("bk.delete"))
+                        .accessibilityLabel(L("bk.delete"))
+                        .disabled(store.busy)
                     }
                     .padding(.vertical, 2)
                 }
@@ -48,6 +57,32 @@ struct BackupsSheet: View {
         } message: { b in
             Text([b.name, L("bk.confirm.body"), store.dirty ? L("dlg.discard") : ""].filter { !$0.isEmpty }.joined(separator: "\n\n"))
         }
+        .alert(L("bk.delete.title"), isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }), presenting: deleting) { b in
+            Button(L("dlg.cancel"), role: .cancel) {}
+            Button(L("bk.delete"), role: .destructive) { Task { await delete(b) } }
+        } message: { b in
+            Text(b.name + "\n\n" + L("bk.delete.body"))
+        }
+        .alert(L("err.title"), isPresented: Binding(get: { failure != nil }, set: { if !$0 { failure = nil } })) {
+            Button(L("dlg.ok")) {}
+        } message: {
+            Text(failure ?? "")
+        }
+    }
+
+    private func delete(_ b: Backup) async {
+        if !Demo.isOn {
+            do {
+                try await Engine.deleteBackup(b.name)
+            } catch let e as EngineError {
+                failure = e.message
+                return
+            } catch {
+                failure = error.localizedDescription
+                return
+            }
+        }
+        list.removeAll { $0.id == b.id }
     }
 
     private func date(_ iso: String) -> String {

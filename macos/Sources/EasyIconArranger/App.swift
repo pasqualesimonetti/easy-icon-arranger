@@ -15,9 +15,11 @@ struct HomeManagerApp: App {
             ContentView()
                 .environment(store)
                 .tint(Brand.blue)
-                .preferredColorScheme(Brand.forcedScheme)
                 .frame(minWidth: 980, minHeight: 640)
-                .onAppear { delegate.store = store }
+                .onAppear {
+                    delegate.store = store
+                    Brand.applyAppearance()
+                }
         }
         .defaultSize(width: 1440, height: 920)
         .windowToolbarStyle(.unified)

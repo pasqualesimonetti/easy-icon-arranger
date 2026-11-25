@@ -89,6 +89,19 @@ func EIARestore(name *C.char) *C.char {
 	return with(func(c *core.Core) (*core.SaveResult, error) { return c.Restore(C.GoString(name)) })
 }
 
+// EIABackupFile returns {"path": ...} for one backup, validated by the store.
+//
+//export EIABackupFile
+func EIABackupFile(name *C.char) *C.char {
+	return with(func(c *core.Core) (map[string]string, error) {
+		p, err := c.BackupFile(C.GoString(name))
+		if err != nil {
+			return nil, err
+		}
+		return map[string]string{"path": p}, nil
+	})
+}
+
 //export EIARevealBackups
 func EIARevealBackups() *C.char {
 	return with(func(c *core.Core) (any, error) { return nil, exec.Command("open", c.BackupsDir()).Start() })

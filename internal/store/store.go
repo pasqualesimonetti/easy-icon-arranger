@@ -110,6 +110,19 @@ func (s *Store) SaveBackup(raw []any, label string) (string, error) {
 	return name, os.WriteFile(filepath.Join(s.Backups, name), data, 0o600)
 }
 
+// BackupFile returns the full path of an existing backup. The name must be a
+// plain backup file name, never a path, so callers cannot reach other files.
+func (s *Store) BackupFile(name string) (string, error) {
+	if name != filepath.Base(name) || !strings.HasSuffix(name, ".plist") || strings.HasPrefix(name, ".") {
+		return "", errors.New("invalid backup name")
+	}
+	p := filepath.Join(s.Backups, name)
+	if fi, err := os.Stat(p); err != nil || !fi.Mode().IsRegular() {
+		return "", errors.New("backup not found")
+	}
+	return p, nil
+}
+
 func (s *Store) LoadBackup(name string) ([]any, error) {
 	if name != filepath.Base(name) || !strings.HasSuffix(name, ".plist") {
 		return nil, errors.New("invalid backup name")

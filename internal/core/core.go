@@ -138,6 +138,15 @@ func (c *Core) Backups() []store.Backup { return c.store.ListBackups() }
 
 func (c *Core) BackupsDir() string { return c.store.Backups }
 
+// BackupFile returns the path of one backup, for the app to move it to the Trash.
+func (c *Core) BackupFile(name string) (string, error) {
+	p, err := c.store.BackupFile(name)
+	if err != nil {
+		return "", errors.New("backup_not_found|" + name)
+	}
+	return p, nil
+}
+
 // Restore writes a saved layout, after backing up the current one.
 func (c *Core) Restore(name string) (*SaveResult, error) {
 	raw, err := c.store.LoadBackup(name)

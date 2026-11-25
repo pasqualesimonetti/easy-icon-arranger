@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 /// Demo mode (`-demoMode YES` at launch): a made-up Home Screen with invented
@@ -115,12 +116,23 @@ enum Brand {
     static let violet = Color(red: 94 / 255, green: 64 / 255, blue: 214 / 255) // #5E40D6
     static let amber = Color(red: 1, green: 176 / 255, blue: 32 / 255)         // #FFB020
 
-    /// `-appearance light|dark` at launch forces the appearance (for screenshots).
-    static var forcedScheme: ColorScheme? {
-        switch UserDefaults.standard.string(forKey: "appearance") {
-        case "light": .light
-        case "dark": .dark
-        default: nil
+    /// Window appearance: "system" (default), "light" or "dark", stored in
+    /// UserDefaults ("appearance"). `-appearance light` at launch also works.
+    static let appearanceKey = "appearance"
+
+    @MainActor static func applyAppearance(_ value: String? = nil) {
+        switch value ?? UserDefaults.standard.string(forKey: appearanceKey) {
+        case "light": NSApp.appearance = NSAppearance(named: .aqua)
+        case "dark": NSApp.appearance = NSAppearance(named: .darkAqua)
+        default: NSApp.appearance = nil
+        }
+    }
+
+    static func appearanceSymbol(_ value: String) -> String {
+        switch value {
+        case "light": "sun.max"
+        case "dark": "moon"
+        default: "circle.lefthalf.filled"
         }
     }
 }
